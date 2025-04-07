@@ -1,0 +1,173 @@
+@font-face {
+  font-family: SFProMedium;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+  font-family: SFProRegular;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Regular.otf");
+}
+@font-face {
+  font-family: SFProHeavy;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Heavy.otf");
+}
+@font-face {
+  font-family: SFProLight;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Light.otf");
+}
+@font-face {
+  font-family: SFProBold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: SFProSemibold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Semibold.otf");
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  font-family: SFProMedium;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+nav {
+  width: 100vw;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.button {
+  text-decoration: none;
+  margin-left: 1em;
+}
+form {
+  width: 100vw;
+  height: auto;
+  padding: 1em;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+form p {
+  margin: 0;
+  padding: 0;
+  width: 14vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+form p label {
+  margin-right: 1.5em;
+}
+form p select {
+  height: 2em;
+}
+form p select option {
+  font-family: SFProMedium;
+}
+.table-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 100vw;
+  height: auto;
+}
+.table-container table {
+  display: flex;
+  flex-direction: column;
+}
+.table-container table thead {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.table-container table thead tr {
+  width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+.orderable {
+  display: flex;
+  flex-direction: row;
+}
+.orderable:nth-child(1) {
+  width: 5%;
+  justify-content: center;
+}
+.orderable:nth-child(2),
+.orderable:nth-child(3),
+.orderable:nth-child(4),
+.orderable:nth-child(5) {
+  width: 15%;
+  justify-content: flex-start;
+}
+.orderable:nth-child(6) {
+  width: 20%;
+  justify-content: flex-start;
+}
+.orderable:nth-child(7) {
+  width: 15%;
+  justify-content: flex-start;
+}
+thead tr,
+tbody tr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+tbody {
+  width: 100%;
+}
+tbody tr {
+  height: 4em;
+}
+tbody tr td {
+  display: flex;
+  flex-direction: row;
+}
+tbody tr td:nth-child(1) {
+  width: 5%;
+  justify-content: center;
+}
+tbody tr td:nth-child(2),
+tbody tr td:nth-child(3),
+tbody tr td:nth-child(4),
+tbody tr td:nth-child(5) {
+  width: 15%;
+  justify-content: flex-start;
+}
+tbody tr td:nth-child(6) {
+  width: 20%;
+}
+tbody tr td:nth-child(7) {
+  width: 15%;
+  justify-content: flex-start;
+}
+tbody tr td:nth-child(7) a:first-child {
+  margin-right: 1em;
+}
+.odd {
+  background-color: #f7f7f7;
+}
+.odd:hover,
+.even:hover {
+  background-color: #f7f7f7;
+}
+a:hover {
+  opacity: 0.6;
+}
+thead a {
+  color: #404040;
+}
+thead a:hover {
+  opacity: 1;
+  cursor: default;
+}

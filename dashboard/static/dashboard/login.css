@@ -1,0 +1,116 @@
+@font-face {
+  font-family: SFProMedium;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+  font-family: SFProRegular;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Regular.otf");
+}
+@font-face {
+  font-family: SFProHeavy;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Heavy.otf");
+}
+@font-face {
+  font-family: SFProLight;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Light.otf");
+}
+@font-face {
+  font-family: SFProBold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: SFProSemibold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Semibold.otf");
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+body * {
+  box-sizing: border-box;
+}
+.login__container {
+  width: 30vw;
+  height: auto;
+  background-color: #fff;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  box-shadow: 0em 1em 2em rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+.login__container p {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: SFProMedium;
+}
+.login__container p label {
+  width: 20%;
+  height: 2.5rem;
+  line-height: 3em;
+}
+.login__container p input {
+  width: 80%;
+  height: 2.5rem;
+  border: 1px solid #328cde;
+  border-radius: 2px;
+  padding-left: 1em;
+}
+.button--login {
+  width: 80%;
+  margin-left: auto;
+  margin-top: 1em;
+}
+.login__alternatives {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 80%;
+  margin-left: auto;
+  margin-top: 0.5em;
+}
+.login__alternatives a {
+  margin-left: 1em;
+  font-family: SFProRegular;
+  text-decoration: none;
+}
+.login__alternatives a:first-child {
+  color: #328cde;
+}
+.login__alternatives a:last-child {
+  color: #404040;
+}
+.login__alternatives a:hover {
+  opacity: 0.8;
+}
+.errorlist {
+  padding: 0;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 1em;
+}
+.errorlist li {
+  list-style: none;
+  color: #de3241;
+  background-color: rgba(222,50,65,0.2);
+  border-radius: 2px;
+  font-family: SFProRegular;
+  padding: 0.4em 0.8em;
+}

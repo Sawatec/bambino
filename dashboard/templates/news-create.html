@@ -1,0 +1,20 @@
+{% extends 'dashboardbase.html' %}
+
+{% block title %}Mitteilung hinzufügen{% endblock %}
+{% load static %}
+{% block ressources %}
+  <link rel="stylesheet" type="text/css" href="{% static '/dashboard/news.css' %}">
+{% endblock %}
+{% block content %}
+<main class="mainframe__news--create">
+  <h2 class="news__headline">Neue Mitteilung hinzufügen</h2>
+  <form class="news__form" method="POST">
+  {% csrf_token %}
+  <!-- {{ form.as_table }} -->
+  {{ form.as_p }}
+  <div class="form__controllerWrapper">
+    <button class="form__submit button" type="submit">Hinzufügen</button>
+    <a href="../show/" class="form__abbrechen">abbrechen</a>
+  </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Nutzer bearbeiten{% endblock %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'verwaltung/update.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'verwaltung/button.css' %}" type="text/css">
+{% endblock %}
+{% block content %}
+<h2>Update User</h2>
+    <form method="POST"  class="registration__container">
+        {% csrf_token %}
+        {{ userForm.as_p }}
+        {{ userprofileForm.as_p }}
+        <button type="submit" class="button button--login">ändern</button>
+        <section class="login__alternatives">
+          <a href="../">zurück</a>
+        </section>
+    </form>
+{% endblock %}

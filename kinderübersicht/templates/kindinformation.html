@@ -1,0 +1,70 @@
+{% extends 'kübase.html' %}
+{% block title %}{{child.get_full_name}}{% endblock %}
+{% load static %}
+{% block ressources %}
+  <link rel="stylesheet" type="text/css" href="{% static '/dashboard/kiinfo.css' %}">
+{% endblock %}
+{% block content %}
+    <main class="mainframe__kiinfo">
+      <h2 class="kiinfo__headline">{{child.get_full_name}}</h2>
+        <section class="kiinfo__infobox">
+            <p>Name: {{ child.get_full_name}}</p>
+            <p>Eintrittsdatum: {{ child.zeitpunkt_des_beitritts }}</p>
+            <p>Eltern: {{ child.elternteil_1 }} / {{ child.elternteil_2 }}</p>
+        </section>
+        <h3 class="kiinfo__subline">Entwicklungsnotiz</h3>
+        <section class="kiinfo__entwnotes">
+            {% if user.userprofile.user_type != 'PA' %}
+                <form class="entwnotes__form" method="POST">
+                    {% csrf_token %}
+                    {{ entwicklungs_form.text}}
+                    <div class="form__action">
+                      {{ entwicklungs_form.type}}
+                      <button class="button" type="submit" name="Entwicklungsnotiz">Entwicklungsnotiz hinzufügen</button>
+                    </div>
+                 </form>
+            {% endif %}
+            {% if user.userprofile.user_type == 'PA' %}
+              <section class="entwnotes__notes entwnotes__notes--left">
+            {% else %}
+              <section class="entwnotes__notes">
+            {% endif %}
+            {% for notiz in entwicklungsnotizen %}
+                <article class="notes__note">
+                    <div class="note__wrap">
+                      <div>
+                        <h4>{{ notiz.author }}</h4>
+                        <p>{{ notiz.erstellungs_datum }}</p>
+                      </div>
+                      <p class="note__type">{{ notiz.get_type_display }}</p>
+                    </div>
+                    <p>{{ notiz.text }}</p>
+                </article>
+            {% endfor %}
+            </section>
+        </section>
+        <h3 class="kiinfo__subline">Mitteilung verfassen</h3>
+        <section class="kiinfo__entwnotes">
+            <form class="entwnotes__form" method="POST">
+              {% csrf_token %}
+              {{ mitteilungs_form.text}}
+              <div class="form__action">
+                <button class="button" type="submit" name="Mitteilung">Mitteilung absenden</button>
+              </div>
+           </form>
+           <section class="entwnotes__notes">
+           {% for m in mitteilungen %}
+               <article class="notes__note">
+                   <div class="note__wrap wrap__left">
+                       <h4>{{ m.author }}</h4>
+                       <p>{{ m.erstellungs_datum }}</p>
+                   </div>
+                   <p>{{ m.text }}</p>
+               </article>
+           {% endfor %}
+           </section>
+        </section>
+        <a href="{% url 'logout' %}">logout</a>
+        <a href="../">Back to dashboard</a>
+    </main>
+{% endblock %}

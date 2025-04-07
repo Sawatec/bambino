@@ -1,0 +1,47 @@
+@font-face {
+  font-family: SFProMedium;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+  font-family: SFProRegular;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Regular.otf");
+}
+@font-face {
+  font-family: SFProHeavy;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Heavy.otf");
+}
+@font-face {
+  font-family: SFProLight;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Light.otf");
+}
+@font-face {
+  font-family: SFProBold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: SFProSemibold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Semibold.otf");
+}
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #328cde;
+  color: #fff;
+  border-radius: 2px;
+  border: none;
+  text-transform: uppercase;
+  font-family: SFProSemibold;
+}
+.button:hover {
+  background-color: rgba(50,140,222,0.8);
+  cursor: pointer;
+}
+.button--text {
+  color: #808080;
+  font-family: SFProMedium;
+}

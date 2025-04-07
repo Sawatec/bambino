@@ -1,0 +1,50 @@
+{% extends 'dashboardbase.html' %}
+{% load static %}
+{% block ressources %}
+  <link rel="stylesheet" type="text/css" href="{% static '/dashboard/news-detail.css' %}">
+{% endblock %}
+{% block title %}{{ that_one_news.title }}{% endblock %}
+{% block content %}
+    <main class="mainframe__detail">
+        <section>
+            <h2 class="detail__headline">{{ that_one_news.title }}</h2>
+            <div class="detail__detailHeader">
+              <p class="detailHeader__name">{{ that_one_news.user.get_full_name }}</p>
+              <p class="detailHeader__date">{{ that_one_news.datepublished }}</p>
+            </div>
+            <div class="detail__contentmessage">
+              <p>{{ that_one_news.message|linebreaks }}</p>
+            </div>
+            <section class="detail__votesection">
+            <div class="votesection__child votesection__upvote">
+              <a href="../vote/{{ that_one_news.id }}/up/">
+                <span>{{ that_one_news.get_upvotes_count }}</span>
+                <ion-icon name="ios-thumbs-up"></ion-icon>
+              </a>
+            </div>
+            <div class="votesection__child votesection__downvote">
+              <a href="../vote/{{ that_one_news.id }}/down/">
+                <span>{{ that_one_news.get_downvotes_count }}</span>
+                <ion-icon name="ios-thumbs-down"></ion-icon>
+              </a>
+            </div>
+          </section>
+        </section>
+        <section class="detail__addComment">
+            <form method="POST">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button class="button" type="submit">kommentieren</button>
+            </form>
+        </section>
+        <section class="detail__comment">
+            {% for comment in comments_for_that_one_news %}
+            <article class="comment__wrapper">
+              <span class="comment__header">{{ comment.user.get_full_name }} am {{ comment.datepublished }}</span>
+              <span class="comment__content">{{ comment.text|linebreaks }}</span>
+            </article>
+        {% endfor %}
+        <br>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,115 @@
+@font-face {
+  font-family: SFProMedium;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+  font-family: SFProRegular;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Regular.otf");
+}
+@font-face {
+  font-family: SFProHeavy;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Heavy.otf");
+}
+@font-face {
+  font-family: SFProLight;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Light.otf");
+}
+@font-face {
+  font-family: SFProBold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: SFProSemibold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Semibold.otf");
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.navigation__landing {
+  width: 100vw;
+  margin: 0;
+  justify-content: flex-end;
+  height: 3em;
+  align-items: center;
+  margin: 0;
+  display: flex;
+  padding: 0em 2em 0em 10vw;
+  background-color: #fff;
+}
+.navigation__element {
+  text-decoration: none;
+  color: #404040;
+}
+.landing__mainframe {
+  width: 100vw;
+  height: calc(100vh - 3em);
+  padding: 0;
+  margin: 0;
+  background-image: url("images/heroimage.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.landing__mainframe:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+.mainframe__text {
+  width: 70vw;
+  position: relative;
+  z-index: 10;
+}
+.mainframe__header {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0em 0em 3em #000;
+  font-family: SFProHeavy;
+  text-align: center;
+}
+.mainframe__subheader {
+  font-size: 1.2rem;
+  color: #e6e6e6;
+  font-family: SFProSemibold;
+  line-height: 2.4rem;
+}
+.mainframe__link {
+  font-size: 1rem;
+  color: #fff;
+  font-family: SFProSemibold;
+  position: relative;
+  text-decoration: none;
+}
+.mainframe__link:before {
+  content: '';
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  background-color: #328cde;
+  transition: 0.4s;
+}
+.mainframe__link:hover:before {
+  transform: scaleX(1);
+}

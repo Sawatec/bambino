@@ -1,0 +1,62 @@
+{% extends 'kübase.html' %}
+
+{% block title %}Gruppenübersicht{% endblock %}
+{% load static %}
+{% block ressources %}
+  <link rel="stylesheet" type="text/css" href="{% static '/dashboard/kiuebersicht.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="mainframe__kinderue">
+    {% if user.userprofile.user_type != 'PA' %}
+    <form class="kinderue__suche" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="button button--spaceout" type="submit">Suchen</button>
+        <a class="button--text" href="{% url 'kinderübersicht' %}">alle anzeigen</a>
+    </form>
+    {% endif %}
+    <h2 class="kinderue__headline">Kinderübersicht</h2>
+    <section class="kinderue__kidgroups">
+      {% if user.userprofile.user_type == 'PA' %}
+      <article class="kidgroups__group--multi kidgroups__group--fullScreen">
+        <h2>News zu ihrem Kind</h2>
+        <hr>
+          {% for kid in kids %}
+            {% if  kid.eltern_user == user %}
+            <div class="group__kid">
+            <a class="kid__name" href="{{ kid.id }}/">{{ kid.get_full_name }}</a>
+            <p class="kid__message">Vorname: {{ kid.vorname }}</p>
+            <p class="kid__message">Name: {{ kid.nachname }}</p>
+            <p class="kid__message">Beitritt: {{ kid.zeitpunkt_des_beitritts }}</p>
+            <p class="kid__message">Elternteil 1: {{ kid.elternteil_1 }}</p>
+            <p class="kid__message">Elternteil 2: {{ kid.elternteil_2 }}</p>
+            <p class="kid__message">Gruppe: {{ kid.gruppe }}</p>
+            <p class="kid__message">Mitgliedsnummer: {{ kid.mitgliedsnummer }}</p>
+
+            </article>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+            {% for gruppe in gruppen %}
+                <article class="kidgroups__group--multi">
+                    <h3>{{ gruppe.gruppenname }}</h3>
+                    <hr>
+                    {% for kid in kids %}
+                        {% if kid.gruppe.gruppenname == gruppe.gruppenname %}
+                            <div class="group__kid">
+                            <a class="kid__name" href="{{ kid.id }}/">{{ kid.get_full_name }}</a>
+                            {% if kid.get_message == 'keine Mitteilungen vorhanden' %}
+                              <p class="kid__message kid__message--deactivate">{{ kid.get_message }}</p>
+                            {% else %}
+                              <p class="kid__message">{{ kid.get_message }}</p>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </article>
+            {% endfor %}
+        {% endif %}
+    </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,132 @@
+//out: tablestyle.css
+
+@import './res/*'
+
+body
+  margin 0
+  padding 0
+
+*
+  font-family SFProMedium
+  text-decoration none
+  box-sizing border-box
+
+nav
+  width 100vw
+  height 2.5em
+  display flex
+  flex-direction row
+  align-items center
+
+.button
+  text-decoration none
+  margin-left 1em
+
+form
+  width 100vw
+  height auto
+  padding 1em
+  background-color lightness(black, 97%)
+  display flex
+  flex-direction row
+  justify-content flex-start
+  align-items center
+  p
+    margin 0
+    padding 0
+    width 14vw
+    display flex
+    flex-direction row
+    align-items center
+    label
+      margin-right 1.5em
+    select
+      height 2em
+      option
+        font-family SFProMedium
+
+.table-container
+  margin-top 2em
+  margin-bottom 2em
+  width 100vw
+  height auto
+  table
+    display flex
+    flex-direction column
+    thead
+      border-bottom 1px solid rgba(black, 0.3)
+      tr
+        width 100%
+        height 2em
+        display flex
+        justify-content space-between
+
+.orderable
+  display flex
+  flex-direction row
+  &:nth-child(1)
+    width 5%
+    justify-content center
+  &:nth-child(2)
+  &:nth-child(3)
+  &:nth-child(4)
+  &:nth-child(5)
+    width 15%
+    justify-content flex-start
+  &:nth-child(6)
+    width 20%
+    justify-content flex-start
+  &:nth-child(7)
+    width 15%
+    justify-content flex-start
+
+thead
+tbody
+  tr
+    display flex
+    flex-direction row
+    align-items center
+
+tbody
+  width 100%
+  tr
+    height 4em
+    td
+      display flex
+      flex-direction row
+      &:nth-child(1)
+        width 5%
+        justify-content center
+      &:nth-child(2)
+      &:nth-child(3)
+      &:nth-child(4)
+      &:nth-child(5)
+        width 15%
+        justify-content flex-start
+      &:nth-child(6)
+        width 20%
+      &:nth-child(7)
+        width 15%
+        justify-content flex-start
+        a
+          &:first-child
+            margin-right 1em
+
+.odd
+  background-color lightness(black, 97%)
+
+.odd
+.even
+  &:hover
+    background-color lightness(black, 97%)
+
+a
+  &:hover
+    opacity 0.6
+
+thead
+  a
+    color lightness(black, 25%)
+    &:hover
+      opacity 1
+      cursor default

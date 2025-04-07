@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Children{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    <br>
+
+    {% if user.userprofile.user_type == 'Eltern' %}
+        <h2>News zu ihrem Kind</h2>
+        {% for kid in all_the_kids %}
+            {% if  kid.eltern_user == user %}
+
+                <a href="{{ kid.id }}/">{{ kid.vorname }}</a><br>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <h2>Kinderübersicht</h2>
+        {% for kid in all_the_kids %}
+            <a href="{{ kid.id }}/"><b>{{ kid.vorname }}</b></a><br>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'logout' %}">logout</a>
+{% endblock %}

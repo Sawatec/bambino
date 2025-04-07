@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Bambino | Registration{% endblock %}
+{% load static %}
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/registration.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/button.css' %}">
+{% endblock %}
+{% block content %}
+  <h2>Registrieren</h2>
+  <form method="post" class="registration__container" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="button button--login" type="submit">Create</button>
+    <section class="login__alternatives">
+      <a href="{% url 'home' %}">back</a>
+    </section>
+  </form>
+{% endblock %}

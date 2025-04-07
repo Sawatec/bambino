@@ -1,0 +1,70 @@
+@font-face {
+  font-family: SFProMedium;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+  font-family: SFProRegular;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Regular.otf");
+}
+@font-face {
+  font-family: SFProHeavy;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Heavy.otf");
+}
+@font-face {
+  font-family: SFProLight;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Light.otf");
+}
+@font-face {
+  font-family: SFProBold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: SFProSemibold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Semibold.otf");
+}
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.warning {
+  width: 50vw;
+}
+.warning * {
+  font-family: SFProMedium;
+  text-decoration: none;
+}
+h1 {
+  font-family: SFProHeavy;
+}
+.warning__message--big {
+  font-family: SFProSemibold;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+}
+.warning__message--smaller {
+  font-family: SFProMedium;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #404040;
+}
+.controls {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}
+.controls * {
+  text-decoration: none;
+}

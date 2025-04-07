@@ -1,0 +1,40 @@
+{% extends 'dashboardbase.html' %}
+{% block title %}Dashboard{% endblock %}
+{% load static %}
+{% block ressources %}
+  <link rel="stylesheet" type="text/css" href="{% static '/dashboard/dashboard.css' %}">
+{% endblock %}
+{% block content %}
+<main class="mainframe__dashboard">
+  <h2 class="dashboard__headline">Dashboard</h2>
+  <ul class="dashboard__newsfeed">
+  {% if user.userprofile.user_type != 'PA' %}
+  <a class="dashboard__adder button" href="../post/">neue information</a>
+  {% endif  %}
+  {% for news in all_the_news|slice:5 %}
+    <li class="newsfeed__news">
+      <a class="news__title" href="{{ news.id }}/">{{ news.get_full_title }}</a>
+      <p class="news__user"><span class="user__pre">verfasst von</span>{{ news.user.get_full_name }}</p>
+      <p class="news__date">{{ news.datepublished }}</p>
+      <span class="news__content">
+        {{ news.message|linebreaks }}
+      </span>
+      <section class="news__votesection">
+      <div class="votesection__child votesection__upvote">
+        <a href="vote/{{ news.id }}/up/">
+          <span>{{ news.get_upvotes_count }}</span>
+          <ion-icon name="ios-thumbs-up"></ion-icon>
+        </a>
+      </div>
+      <div class="votesection__child votesection__downvote">
+        <a href="vote/{{ news.id }}/down/">
+          <span>{{ news.get_downvotes_count }}</span>
+          <ion-icon name="ios-thumbs-down"></ion-icon>
+        </a>
+      </div>
+      </section>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+{% endblock %}

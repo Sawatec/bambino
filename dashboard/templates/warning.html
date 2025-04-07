@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Achtung | Noch nicht zugelassen{% endblock %}
+
+{% load static %}
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/warnung.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/button.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="warning">
+      <h1>Achtung!</h1>
+      <p class="warning__message--big">Dieser Account wurde noch nicht zur Benutzung freigeschaltet.</p>
+      <p class="warning__message--smaller">Bitte wenden Sie sich umgehend an die zuständige Leitung Ihrer Kindertagesstätte.</p>
+    </div>
+    <div class="controls">
+    <a class="button" href="{% url 'create_user' %}">zurück</a>
+    <a class="button" href="{% url 'home' %}">abbrechen</a>
+    </div>
+{% endblock %}

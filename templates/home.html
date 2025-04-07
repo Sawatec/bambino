@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Bambino | Herzlich Willkommen{% endblock %}
+{% load static %}
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/landing.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/navigation.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/button.css' %}">
+{% endblock %}
+{% block content %}
+    <nav class="navigation__landing">
+      <a href="{% url 'login' %}" class="navigation__element">login</a>
+      <a href="{% url 'create_user' %}" class="navigation__element">Registration</a>
+    </nav>
+    <main class="landing__mainframe">
+      <p class="mainframe__text mainframe__header">Herzlich Willkommen bei Bambino.</p>
+      <p class="mainframe__text mainframe__subheader">Bambino ist eine all-in-one Kitamanagement App um Ihre Kita effizient und kontrolliert zu leiten, mit den Eltern zu kommunizieren und Entwicklungsberichte zu erstellen.</p>
+      <a href="#" class="mainframe__link">mehr erfahren</a>
+    </main>
+{% endblock %}

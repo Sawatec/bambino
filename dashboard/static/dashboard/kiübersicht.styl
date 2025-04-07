@@ -1,0 +1,91 @@
+//out: kiuebersicht.css
+
+@import './res/*'
+
+body
+  padding-bottom 5em
+
+.kinderue__headline
+  color base
+  font-family SFProHeavy
+  font-size 3em
+  display block
+  width 100%
+  border-bottom 1px solid rgba(base, 1)
+
+.mainframe__kinderue
+  margin 4.5em 10vw 0em 10vw
+
+.kinderue__suche
+  width 100%
+  height 3em
+  display flex
+  flex-direction row
+  justify-content flex-end
+  align-items center
+
+.suche__surname
+  display block
+  padding 0.5em 1em
+  width 35em
+  margin-right 1em
+  border-radius 2px
+  height 3em
+  background-color white
+  border 1px solid accent
+
+.button--spaceout
+  margin-right 1em
+
+.kinderue__kidgroups
+  margin-top 2em
+  display grid
+  grid-template-columns 50% 50%
+  grid-template-rows repeat(auto-fill, minmax(15em,min-content))
+  grid-gap 1em
+
+.kidgroups__group--multi
+  width 100%
+  height 100%
+  grid-row span 1
+  grid-column span 1
+  background-color white
+  box-shadow 0em 1em 2em rgba(black, 0.1)
+  padding 1em
+
+.group__kid
+  display flex
+  flex-direction column
+  padding 1em
+  border 1px solid lightness(black, 90%)
+  border-radius 2px
+  &:hover
+    cursor pointer
+    background-color lightness(black, 99%)
+  &:not(:last-child)
+    margin-bottom 1em
+  &:nth-child(even)
+    background-color lightness(black, 97%)
+
+.kid__name
+  font-family SFProBold
+  font-size 1.2em
+  margin-bottom 0.4em
+
+
+.kid__message
+  background-color accentLight
+  color accent
+  border-radius 2px
+  border 1px solid accent
+  padding 0.5em 1em
+  display inline
+
+.kid__message--deactivate
+  background-color lightness(black, 97%)
+  color lightness(black, 25%)
+  border 1px solid lightness(black, 90%)
+
+.kidgroups__group--fullScreen
+  grid-column span 2
+  grid-row span 2

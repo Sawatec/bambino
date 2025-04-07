@@ -1,0 +1,19 @@
+//out: button.css
+
+@import './res/*'
+
+.button
+  padding 0.5rem 1rem
+  background-color accent
+  color white
+  border-radius 2px
+  border none
+  text-transform uppercase
+  font-family SFProSemibold
+  &:hover
+    background-color rgba(accent, 0.8)
+    cursor pointer
+
+.button--text
+  color lightness(black, 50%)
+  font-family SFProMedium

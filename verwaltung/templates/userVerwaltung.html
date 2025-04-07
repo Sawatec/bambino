@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Bambino | Nutzerverwaltung{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'verwaltung/tablestyle.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'verwaltung/button.css' %}" type="text/css">
+{% endblock %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="button button--login" type="submit">wählen</button>
+    </form>
+    {% load render_table from django_tables2 %}
+        {% render_table table %}
+    <nav>
+      <a class="button" href="../../../dashboard">zurück</a>
+    </nav>
+{% endblock %}

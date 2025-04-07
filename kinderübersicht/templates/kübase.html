@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bambino  | {% block title %}{% endblock %}</title>
+    {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static '/dashboard/reset.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static '/dashboard/navigation.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static '/dashboard/button.css' %}">
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+      {% block ressources %}{% endblock %}
+</head>
+<body>
+  <nav class="navigation">
+    <p class="navigation__loggedinas">{{user.userprofile.kindergarten}}:
+      {{user.userprofile.get_full_name}} ({{user.userprofile.mitgliedsnummer}})</p>
+    <div>
+    <a href="{% url 'dashboard' %}" class="navigation__element">Dashboard</a>
+    <a href="{% url 'kinderübersicht' %}" class="navigation__element">Kinderübersicht</a>
+    <a href="{% url 'dashboard' %}" class="navigation__element">Kontakt</a>
+    <a href="{% url 'dashboard' %}" class="navigation__element">Hilfe</a>
+    <a href="{% url 'logout' %}" class="navigation__element navigation__element--logout">logout</a>
+    <div>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

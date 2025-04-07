@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Achtung | Falsche Mitgliedsnummer{% endblock %}
+
+{% load static %}
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/warnung.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static './dashboard/button.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="warning">
+      <h1>Achtung!</h1>
+      <p class="warning__message--big">Diese Mitgliedsnummer ist noch nicht vergeben.</p>
+      <p class="warning__message--smaller">Diese Mitgliedsnummer wurde bisher noch nicht vergeben bzw. kann keinem Kind zugeordnet werden. Bitte setzen Sie sich mit Ihrer Kindertagesstätte in Verbindung um Ihre Mitgliedsnummer zu erhalten. Erst dann können Sie sich auf Bambino registrieren.</p>
+    </div>
+    <div class="controls">
+    <a class="button" href="{% url 'create_user' %}">zurück</a>
+    <a class="button" href="{% url 'home' %}">abbrechen</a>
+    </div>
+{% endblock %}

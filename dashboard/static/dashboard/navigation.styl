@@ -1,0 +1,44 @@
+//out: navigation.css
+
+@import './res/*'
+
+.navigation
+   position fixed
+   z-index 1001
+   width 100vw
+   height 3.5em
+   top 0
+   left 0
+   display flex
+   flex-direction row
+   justify-content space-between
+   padding 0em 2em 0em 10vw
+   align-items center
+   background-color white
+   margin-bottom 2em
+   box-shadow 0em 1em 2em rgba(base, 0.03)
+
+.navigation__element
+  margin 0em 1.5em
+  font-size 0.8em
+  text-transform UPPERCASE
+  font-family SFProSemibold
+  padding 0.5em 0.9em
+  transition .1s
+  &:hover
+    color accent
+    background-color accentLight
+    border-radius 2px
+
+.navigation__element--logout
+  font-weight bolder
+  text-transform lowercase
+  color rgba(danger, 0.3)
+  &:hover
+    color rgba(danger, 1)
+    background-color rgba(danger, 0.3)
+
+.navigation__loggedinas
+  font-family SFProMedium
+  color lightness(black, 20%)
+  font-size 0.8em

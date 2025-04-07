@@ -1,0 +1,87 @@
+@font-face {
+  font-family: SFProMedium;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+  font-family: SFProRegular;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Regular.otf");
+}
+@font-face {
+  font-family: SFProHeavy;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Heavy.otf");
+}
+@font-face {
+  font-family: SFProLight;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Light.otf");
+}
+@font-face {
+  font-family: SFProBold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Bold.otf");
+}
+@font-face {
+  font-family: SFProSemibold;
+  font-style: normal;
+  src: url("fonts/SF-Pro-Display-Semibold.otf");
+}
+.mainframe__news--create {
+  margin: 4.5em 10vw 0em 10vw;
+}
+.news__headline {
+  color: #000;
+  font-family: SFProHeavy;
+  font-size: 3em;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin-bottom: 3em;
+}
+.news__form {
+  width: 50vw;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.news__form p {
+  width: 100%;
+}
+.form__title {
+  line-height: 2em;
+  display: block;
+  margin-bottom: 1em;
+}
+.form__message {
+  resize: none;
+  min-height: 45vh;
+}
+.form__message,
+.form__title {
+  font-size: 0.9rem;
+  padding: 1em;
+  width: 100%;
+  border: 1px solid #328cde;
+  border-radius: 2px;
+  box-shadow: 0em 1em 2em rgba(50,140,222,0.05);
+}
+.form__controllerWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.5em 0em;
+}
+.form__abbrechen {
+  font-family: SFProSemibold;
+  color: #808080;
+  margin: 0em 3.5em;
+  font-size: 0.7em;
+}
+.form__abbrechen:hover {
+  opacity: 0.8;
+}

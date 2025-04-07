@@ -1,0 +1,60 @@
+//out: news.css
+
+@import './res/*'
+
+.mainframe__news--create
+  margin 4.5em 10vw 0em 10vw
+
+.news__headline
+  color base
+  font-family SFProHeavy
+  font-size 3em
+  display block
+  width 100%
+  border-bottom 1px solid rgba(base, 1)
+  margin-bottom 3em
+
+.news__form
+  width 50vw
+  height auto
+  margin-right auto
+  margin-left auto
+
+.news__form
+  p
+    width 100%
+
+.form__title
+  line-height 2em
+  display block
+  margin-bottom 1em
+
+.form__message
+  resize none
+  min-height 45vh
+
+.form__message
+.form__title
+  font-size 0.9rem
+  padding 1em
+  width 100%
+  border 1px solid accent
+  border-radius 2px
+  box-shadow 0em 1em 2em rgba(accentLight, 0.05)
+
+.form__controllerWrapper
+  width 100%
+  height auto
+  display flex
+  flex-direction row-reverse
+  justify-content flex-start
+  align-items center
+  margin 1.5em 0em
+
+.form__abbrechen
+  font-family SFProSemibold
+  color lightness(black, 50%)
+  margin 0em 3.5em
+  font-size 0.7em
+  &:hover
+    opacity 0.8
